@@ -1,0 +1,24 @@
+{"id": "c01", "text": "Patient callback at 480-555-0142 re: refill.", "expected": [["PHONE", "480-555-0142"]]}
+{"id": "c02", "text": "SSN 000-12-3456 on file for intake.", "expected": [["SSN", "000-12-3456"]]}
+{"id": "c03", "text": "ssn: 000998877 provided verbally.", "expected": [["SSN", "000998877"]]}
+{"id": "c04", "text": "Invoice 123456789 net 30, PO 987654321.", "expected": []}
+{"id": "c05", "text": "Reach guardian at maria.example@mail.test for consent.", "expected": [["EMAIL", "maria.example@mail.test"]]}
+{"id": "c06", "text": "MRN: 00482913 transferred from partner clinic.", "expected": [["MRN", "MRN: 00482913"]]}
+{"id": "c07", "text": "mrn 7731002 flagged for records review.", "expected": [["MRN", "mrn 7731002"]]}
+{"id": "c08", "text": "Coverage under member XQZ000112233 active.", "expected": [["MEMBER_ID", "XQZ000112233"]]}
+{"id": "c09", "text": "DOB 4/17/1991; consent signed by parent.", "expected": [["DOB", "4/17/1991"]]}
+{"id": "c10", "text": "Appointment on 4/17/2026 at the Mesa office.", "expected": []}
+{"id": "c11", "text": "Born 12/01/2015, enrolled in early program.", "expected": [["DOB", "12/01/2015"]]}
+{"id": "c12", "text": "Fax results to (602) 555-0100 attn records.", "expected": [["PHONE", "(602) 555-0100"]]}
+{"id": "c13", "text": "Cell 480.555.0177, prefers text.", "expected": [["PHONE", "480.555.0177"]]}
+{"id": "c14", "text": "Case ref ABC12345 is not an insurance number.", "expected": []}
+{"id": "c15", "text": "Email intake+family@clinic.test and cc records@clinic.test.", "expected": [["EMAIL", "intake+family@clinic.test"], ["EMAIL", "records@clinic.test"]]}
+{"id": "c16", "text": "SSN 000 45 6789 read over phone, verify before use.", "expected": [["SSN", "000 45 6789"]]}
+{"id": "c17", "text": "Batch 555-01-9999-A is a supply lot code.", "expected": []}
+{"id": "c18", "text": "No identifiers in this scheduling note; room moved to B4.", "expected": []}
+{"id": "c19", "text": "Member GHI555000111 and MRN#99120044 both verified.", "expected": [["MEMBER_ID", "GHI555000111"], ["MRN", "MRN#99120044"]]}
+{"id": "c20", "text": "Date of birth: 7/9/2008 per enrollment form.", "expected": [["DOB", "7/9/2008"]]}
+{"id": "c21", "text": "Nine digits 314159265 in a math worksheet.", "expected": []}
+{"id": "c22", "text": "Contact 480-555-0142 or 480-555-0198 before 5pm.", "expected": [["PHONE", "480-555-0142"], ["PHONE", "480-555-0198"]]}
+{"id": "c23", "text": "Policy total $123,456,789 billed to plan.", "expected": []}
+{"id": "c24", "text": "SSN on file; last four 6789 only.", "expected": []}

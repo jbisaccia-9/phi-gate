@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/phigate/__init__.py
+src/phigate/__main__.py
+src/phigate/eval.py
+src/phigate/gate.py
+src/phigate/patterns.py
+src/phigate.egg-info/PKG-INFO
+src/phigate.egg-info/SOURCES.txt
+src/phigate.egg-info/dependency_links.txt
+src/phigate.egg-info/requires.txt
+src/phigate.egg-info/top_level.txt
+tests/test_phigate.py
