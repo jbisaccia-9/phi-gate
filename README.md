@@ -1,5 +1,7 @@
 # phi-gate
 
+[![ci](https://github.com/jbisaccia-9/phi-gate/actions/workflows/ci.yml/badge.svg)](https://github.com/jbisaccia-9/phi-gate/actions) · [captured results](RESULTS.md)
+
 **A PHI-shaped redaction layer that must clear a recall gate before it is
 allowed to sit in front of an LLM.**
 
