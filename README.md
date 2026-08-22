@@ -43,6 +43,34 @@ exactly like an SSN, which the regex tier cannot distinguish. It is a permanent
 known false positive, printed by the gate on every run, and the first item the
 NER tier would fix.
 
+## The flow
+
+```mermaid
+flowchart TB
+    TXT["incoming text"] --> DET["detectors: SSN, phone, email, MRN, member id, DOB"]
+    CTX["context rules: bare 9 digits need SSN context, dates need DOB context"] --> DET
+    DET --> F["findings (type, value)"]
+    F --> RED["redact: typed placeholders"]
+    CORPUS["labeled corpus: 24 synthetic cases incl. one permanent known FP"] --> EV["recall + precision vs labels"]
+    DET --> EV
+    EV --> G{"redaction gate: recall >= 0.95 and precision >= 0.90"}
+    G -- "pass" --> OK["redactor may front an LLM"]
+    G -- "fail" --> NO["redactor refused"]
+
+    subgraph EVAL["Braintrust-shaped eval: data, task, scorers"]
+        D["data: labeled corpus"] --> T["task: detect"] --> SC["scorers: case_exact, recall, precision"]
+    end
+    SC -- "regression" --> CIF["CI fails"]
+    SC -.-> BT["Braintrust hosted tracking (obs extra)"]
+```
+
+## Eval structure (Braintrust-shaped)
+
+`python -m phigate suite` runs the `Eval(data, task, scores)` contract
+keyless; `case_exact` sits permanently below 1.0 because of the documented
+lot-code false positive — the suite pins that honesty as a number. The obs
+extra pushes the identical suite to hosted Braintrust.
+
 ```
 python -m venv .venv
 .venv/bin/pip install -U pip

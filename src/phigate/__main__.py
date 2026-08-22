@@ -7,6 +7,9 @@ from .patterns import redact
 
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "scan"
+    if cmd == "suite":
+        from .btsuite import run_local
+        sys.exit(run_local())
     if cmd == "scan":
         print(json.dumps(ev.evaluate(), indent=2))
     elif cmd == "gate":
